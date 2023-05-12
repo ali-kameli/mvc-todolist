@@ -1,0 +1,18 @@
+<% todos.forEach(todo=> { %>
+    <div class="card">
+        <% if(todo.completed){ %>
+            <del>
+                <p>
+                    <%= todo.text %>
+                </p>
+            </del>
+            <% }else{ %>
+
+                <p>
+                    <%= todo.text %>
+                </p>
+                <% } %>
+                    <a class="fa fa-trash" href="/admin/delete-todo/<%- todo.id %>"></a>
+                    <a class="fa fa-check" href="/admin/completed-todo/<%- todo.id %>"></a>
+    </div>
+    <% }) %>
